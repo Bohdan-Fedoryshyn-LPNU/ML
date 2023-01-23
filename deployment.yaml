@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubmllab-deployment
+spec:
+  selector:
+    matchLabels:
+      app: kubmllab
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: kubmllab
+    spec:
+      containers:
+        - name: kubmllab
+          image: brunoauditore/kubmllab:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

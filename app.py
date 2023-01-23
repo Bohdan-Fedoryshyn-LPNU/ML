@@ -25,9 +25,9 @@ def predict():
             class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer',
                            'dog', 'frog', 'horse', 'ship', 'truck']
             ind = nd.argmax(pred, axis=1).astype('int')
-            prediction = 'The input picture is classified as [%s], with probability %.3f.'%
+            prediction = 'The input picture is classified as [%s], with probability %.3f.'
             (class_names[ind.asscalar()], nd.softmax(pred)[0][ind].asscalar())
-return prediction
+    return prediction
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
